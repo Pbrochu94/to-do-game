@@ -1,19 +1,31 @@
-import { projectArr } from "./data"
+import { projectArr} from "./data"
 export {projectArrBehavior, projectCreation}
 
 const projectArrBehavior = {
-    add:function(){
-        projectArr.push(projectCreation.create());
-        console.log(projectArr);
+    newProjectCount:0,
+    add:function(object){
+        projectArr.push(projectCreation.create(object));
+        this.addCounter();
+    },
+    del:function(object){
+        projectArr.splice(object.id,1)
+        this.delCounter();
+    },
+    addCounter:function(){
+        this.newProjectCount++;
+    },
+    delCounter:function(){
+        this.newProjectCount--;
     }
 };
 
 const projectCreation = {
-    create:function(){
+    create:function(object){
         let newTask = {
-            title : prompt("What is the task?"),
-            time : prompt("How much time does it take?"),
-            limit : prompt("when is the time limit"),
+            title:object.title,
+            time:object.time,
+            due: object.due,
+            id:projectArrBehavior.newProjectCount,
         }
         return newTask;
     }
