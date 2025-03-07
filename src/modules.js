@@ -4,17 +4,21 @@ export {projectArrBehavior, projectCreation}
 const projectArrBehavior = {
     newProjectCount:0,
     add:function(object){
-        projectArr.push(projectCreation.create(object));
+        projectArr.push(projectCreation.create(object));  
         this.addCounter();
     },
-    del:function(object){
-        projectArr.splice(object.id,1)
-        this.delCounter();
+    del:function(projectToRemove){
+        for(let currentProject of projectArr){
+            if(currentProject.id === projectToRemove.id)
+            {
+                projectArr.splice(projectArr.indexOf(currentProject), 1);
+            }
+        }
     },
     addCounter:function(){
         this.newProjectCount++;
     },
-    delCounter:function(){
+    subCounter:function(){
         this.newProjectCount--;
     }
 };
