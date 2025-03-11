@@ -39,6 +39,51 @@
 
 .timeline-tab{
     background-color:rgb(94, 104, 109);
+    display:flex;
+    flex-direction: column;
+}
+
+.timeline-tab *{
+    height: auto;
+    width: auto;
+}
+
+.characters-path{
+    height: 70%;
+    width: auto;
+}
+
+.days-meter {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    width: auto;
+}
+.current-step{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: gray;
 }
 
 .profile-stats-wrapper{
@@ -46,7 +91,6 @@
     display: grid;
     grid-template-rows:2fr 1fr ;
 }
-
 
 
 .project-tab{
@@ -82,7 +126,7 @@
     margin: 10% 0 10% 0;
 }
 
-progress {
+#xp-bar {
     width: 90%;
     height: 40%;
     border-radius: 10px;
@@ -94,13 +138,13 @@ progress {
   }
   
   /* Fond de la barre de progression */
-  progress::-webkit-progress-bar {
+  #xp-bar::-webkit-progress-bar {
     background-color: #2e2a2a;
     border-radius: 10px;
   }
   
   /* Barre de progression remplie */
-  progress::-webkit-progress-value {
+  #xp-bar::-webkit-progress-value {
     background-color: #0b32dd;
     border-radius: 10px; /* Ce seul réglage ne suffit pas sans overflow: hidden */
   }
