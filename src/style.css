@@ -1,3 +1,8 @@
+:root{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+}
+
 *{
     height:100%;
     width:100%;
@@ -31,10 +36,8 @@
 
 .profile-stats-wrapper{
     background-color: rgb(58, 57, 96);
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
+    display: grid;
+    grid-template-rows:2fr 1fr ;
 }
 
 
@@ -43,3 +46,31 @@
     background-color:rgb(169, 191, 168);
 }
 
+.stats{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.ul-wrapper{
+    height: auto;
+    width: auto; 
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding:0 20% 0 20%;
+}
+
+.stats>h1{
+    height: auto;
+    width: auto; 
+}
+.ul-wrapper>ul, .ul-wrapper>ul>li{
+    height: auto;
+    width: auto;
+    list-style: none;
+}
+
+.ul-wrapper>ul>li{
+    margin: 10% 0 10% 0;
+}
