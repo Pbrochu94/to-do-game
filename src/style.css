@@ -51,6 +51,14 @@
 .characters-path{
     height: 70%;
     width: auto;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+}
+
+.character-space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .days-meter {
@@ -75,16 +83,34 @@
     justify-content: center;
 }
 
-.label {
+.days-label {
     font-weight: bold;
+    margin-top: 10%;
 }
 
 .indicator {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: gray;
+    width: 100%;
+    height: 5px;
+    border-radius: 0;
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.day-checkpoint{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: rgb(17, 17, 17);
+}
+
+.day-checkpoint[active]{
+    background-color: rgb(6, 71, 41);
+}
+
+
+
 
 .profile-stats-wrapper{
     background-color: rgb(58, 57, 96);
@@ -101,6 +127,17 @@
     display:flex;
     flex-direction: column;
     text-align: center;
+}
+
+.inventory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventory>img{
+    height: max(250px,95%);
+    width: max(260px,95%);
 }
 
 .ul-wrapper{
