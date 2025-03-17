@@ -11,13 +11,6 @@ let firstTask = {
     due:"end of day",
     id:0,
 }
-
-let secondTask = {
-    title:"laundry",
-    time:"1h",
-    due:"tomorrow",
-    id:1,
-}
 //--------------------
 
 //Rendre les donnees accessible--------
@@ -26,7 +19,6 @@ window.projectArrBehavior = projectArrBehavior
 window.projectCreation = projectCreation
 //-------------------------------------
 projectArrBehavior.add(firstTask);
-projectArrBehavior.add(secondTask);
 
 
 console.log(projectArr);

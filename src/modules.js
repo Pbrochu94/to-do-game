@@ -24,7 +24,7 @@ const projectArrBehavior = {
 };
 
 const projectCreation = {
-    create:function(object){
+    create:function(){
         let newTask = {
             title:object.title,
             time:object.time,
@@ -34,3 +34,24 @@ const projectCreation = {
         return newTask;
     }
 };
+
+const questDomActions = {
+    addButtonListener:(function(){
+        let addButton = document.querySelector(".add-project-button");
+        addButton.addEventListener("click",function(){
+            questDomActions.openAddWindow()
+            console.log("button clicked")
+        })
+    })(),
+    addQuestListener:(function(){
+        let quests = document.querySelectorAll(".quest-thumbnail");
+        quests.forEach((quest)=>{
+            console.log(quest)
+            quest.addEventListener("click", function(){
+            console.log("quests clicked");
+        })})
+    })(),
+    openAddWindow:function(){
+        
+    }
+}

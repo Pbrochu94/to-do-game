@@ -266,3 +266,37 @@ hr{
     top: 88%;
     left:94%
 }
+
+/*---------All hidden stuff----------*/
+
+.add-quest-open-scroll{
+    position: absolute;
+    z-index:2;
+    top:0%;
+    left:35%;
+    height: max(200px, 87%);
+    width: max(400px, 40%);
+    background: url(img/open\ scroll.png);
+    background-size: max(400px, 40vw);
+    background-repeat: no-repeat;
+    padding: 10%;
+    text-align: center;
+}
+
+.add-quest-form{
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-quest-form>input{
+    width: auto;
+    height: auto;
+}
+
+.add-quest-form>label{
+    width: auto;
+    height: auto;
+}
