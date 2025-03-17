@@ -249,3 +249,12 @@ hr{
     justify-content: center;
     align-items: center;
 }
+
+.gold-icon{
+    height: 100px;
+    width: 100px;
+    display: block;
+    position: absolute;
+    top: 88%;
+    left:94%
+}
