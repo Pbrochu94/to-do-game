@@ -41,6 +41,7 @@
     background-color:rgb(94, 104, 109);
     display:flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .timeline-tab *{
@@ -66,6 +67,7 @@
     justify-content: space-between;
     height: auto;
     width: auto;
+    flex:1;
 }
 .current-step{
     flex: 1;
@@ -137,7 +139,7 @@
 
 .inventory>img{
     height: max(250px,95%);
-    width: max(260px,95%);
+    width: max(260px,100%);
 }
 
 .ul-wrapper{
@@ -191,4 +193,59 @@ hr{
     border-top-color:rgb(10, 34, 34) ;
     border-radius:2px;
     height: 2px;
+}
+
+/*-----------------project section------------------*/
+
+.project-tab *{
+    height: auto;
+    width: auto;
+}
+
+.project-tab{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.project-tab>*{
+    margin: 0.5%;
+}
+
+.add-project-button{
+    height: 8%;
+    width: 20%;
+    border-radius: 4%;
+}
+
+.projects-wrapper{
+    background-color:rgb(88, 88, 97);
+    flex:1;
+    height: 95%;
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,300px));
+    grid-template-rows: repeat(2, min(72%,400px));
+    grid-auto-rows: min(50%,300px);
+    gap: 5%;
+    padding: 1%;
+    overflow-y: scroll;
+}
+
+.quest-thumbnail{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color:rgb(49, 53, 112);
+    border-radius: 10px;
+    background:url(img/scroll.png);
+    background-size:cover;
+    padding: 15%;
+}
+
+.xp{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
