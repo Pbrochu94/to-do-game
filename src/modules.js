@@ -1,6 +1,7 @@
 import { projectArr} from "./data"
 export {projectArrBehavior, projectCreation}
 
+/*Array operations*/
 const projectArrBehavior = {
     newProjectCount:0,
     add:function(object){
@@ -35,13 +36,25 @@ const projectCreation = {
     }
 };
 
-const questDomActions = {
+/*dom manipulations(open window, add sections,etc)*/
+const domManipulations = {
+    openAddWindow:function(){
+        let addWindow = document.querySelector(".add-quest-open-scroll");
+        addWindow.classList.remove("invisible");
+        listenersAction.addQuestWindowCloseListener;
+    },
+    closeAddWindow:function(){
+        let objectToClose = document.querySelector(".add-quest-open-scroll");
+        console.log(objectToClose);
+        objectToClose.classList.add("invisible");
+    }
+}
+
+/*Add the event listeners*/ 
+const listenersAction = {
     addButtonListener:(function(){
         let addButton = document.querySelector(".add-project-button");
-        addButton.addEventListener("click",function(){
-            questDomActions.openAddWindow()
-            console.log("button clicked")
-        })
+        addButton.addEventListener("click",domManipulations.openAddWindow);
     })(),
     addQuestListener:(function(){
         let quests = document.querySelectorAll(".quest-thumbnail");
@@ -51,7 +64,9 @@ const questDomActions = {
             console.log("quests clicked");
         })})
     })(),
-    openAddWindow:function(){
-        
-    }
+    addQuestWindowCloseListener:(function(){
+        let closeButton = document.querySelector(".close-add-quest-window");
+        closeButton.addEventListener("click", domManipulations.closeAddWindow)
+    })(),
 }
+

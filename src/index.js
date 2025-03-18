@@ -18,7 +18,3 @@ window.projectArr = projectArr
 window.projectArrBehavior = projectArrBehavior
 window.projectCreation = projectCreation
 //-------------------------------------
-projectArrBehavior.add(firstTask);
-
-
-console.log(projectArr);
