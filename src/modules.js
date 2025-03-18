@@ -68,5 +68,10 @@ const listenersAction = {
         let closeButton = document.querySelector(".close-add-quest-window");
         closeButton.addEventListener("click", domManipulations.closeAddWindow)
     })(),
+    addQuestSubmitListener:(function(){
+        let submit = document.querySelector(".submit-button");
+        submit.addEventListener("click",()=>console.log("button clicked"));
+        console.log("Submit sent");
+    })(),
 }
 

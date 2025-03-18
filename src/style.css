@@ -332,6 +332,10 @@ input[type=submit]{
     overflow: hidden;
 }
 
+input[type=submit]:hover{
+    transform: scale(1.1);
+}
+
 .close-add-quest-window{
     position: absolute;
     background-color: red;
@@ -342,4 +346,8 @@ input[type=submit]{
     border: none;
     background: url(img/red-close-symbol.png);
     background-size: cover;
+}
+
+.close-add-quest-window:hover{
+    transform: scale(1.1);
 }

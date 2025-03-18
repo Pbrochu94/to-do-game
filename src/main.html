@@ -110,20 +110,20 @@
         </div>
         <div class="add-quest-open-scroll invisible">
             <button type="button" class="close-add-quest-window"></button>
-            <form action="post" class="add-quest-form">  
+            <form action="https://httpbin.org/post" method="post" class="add-quest-form" target="_blank">  
                 <div class="form-section">
                     <label for="quest-name">Quest:</label>
-                    <input type="text" id="quest-name">
+                    <input type="text" id="quest-name" name="Quest name">
                 </div>
                 <div class="form-section">
                     <label for="duration">Time to complete:</label>
-                    <input type="number" id="duration">
+                    <input type="text" id="duration" name="Quest duration">
                 </div>
                 <div class="form-section">
                     <label for="ending-date">To do before:</label>
-                    <input type="date" id="ending-date">
+                    <input type="date" id="ending-date" name="Quest limit">
                 </div>
-                <input type="submit" value="Add quest">
+                <input type="submit" value="Add quest" class="submit-button">
             </form>
         </div>
         <img class="gold-icon" src="img/Coin_video_game.png" alt="Gold coin picture">
