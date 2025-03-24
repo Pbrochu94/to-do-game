@@ -1,5 +1,5 @@
 import { projectArr} from "./data"
-export {quest}
+export {quest, domManipulations}
 
 /*Array operations*/
 const quest = {
@@ -16,6 +16,7 @@ const quest = {
         }
         console.log(questObject);
         quest.addToArr(questObject);
+        domManipulations.createQuestElement(questObject);
     },
     addToArr:function(quest){
         this.array.push(quest);  
@@ -47,6 +48,15 @@ const domManipulations = {
         document.querySelector("#duration").value = "";
         document.querySelector("#ending-date").value = "";
         objectToClose.classList.add("invisible");
+    },
+    createQuestElement:function(questObject){
+        let newQuest = document.querySelector(".quest-thumbnail").cloneNode(true);//clone default quest template with parameter true for all his descendant.
+        newQuest.querySelector(".title").value = "Test";
+        console.log(newQuest);
+        this.addQuestToDom(newQuest);
+    },
+    addQuestToDom:function(newQuest){
+        document.querySelector(".projects-wrapper").append(newQuest);
     }
 }
 

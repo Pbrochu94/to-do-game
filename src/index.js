@@ -1,5 +1,5 @@
 import "./style.css"
-import {quest} from "./modules.js"
+import {quest, domManipulations} from "./modules.js"
 
 console.log("script start");
 
@@ -14,4 +14,5 @@ let firstTask = {
 
 //Rendre les donnees accessible--------
 window.quest = quest;
+window.manipulations = domManipulations;
 //-------------------------------------
