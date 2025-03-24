@@ -1,5 +1,5 @@
 import { projectArr} from "./data"
-export {projectArrBehavior, projectCreation}
+export {projectArrBehavior}
 
 /*Array operations*/
 const projectArrBehavior = {
@@ -24,17 +24,19 @@ const projectArrBehavior = {
     }
 };
 
-const projectCreation = {
-    create:function(){
-        let newTask = {
-            title:object.title,
-            time:object.time,
-            due: object.due,
-            id:projectArrBehavior.newProjectCount,
+const quest = {
+    idCounter:0,
+    create:function(questName,questDuration, questEnding){
+        this.idCounter++;
+        let questObject = {
+            title:questName,
+            duration:questDuration,
+            ending:questEnding,
+            id:this.idCounter
         }
-        return newTask;
+        console.log(questObject);
     }
-};
+    };
 
 /*dom manipulations(open window, add sections,etc)*/
 const domManipulations = {
@@ -72,6 +74,16 @@ const listenersAction = {
         let submit = document.querySelector(".submit-button");
         submit.addEventListener("click",()=>console.log("button clicked"));
         console.log("Submit sent");
+    })(),
+    addOnSubmitFormListener:(function(){
+        document.querySelector(".add-quest-form").addEventListener("submit",function(event){
+            event.preventDefault();
+            let questName = document.querySelector("#quest-name").value;
+            let questTime = document.querySelector("#duration").value;
+            let endingDate = document.querySelector("#ending-date").value;
+            domManipulations.closeAddWindow();
+            quest.create(questName,questTime,endingDate);
+        })
     })(),
 }
 

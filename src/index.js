@@ -1,6 +1,6 @@
 import "./style.css"
 import { projectArr } from "./data.js";
-import {projectArrBehavior, projectCreation} from "./modules.js"
+import {projectArrBehavior} from "./modules.js"
 
 console.log("script start");
 
@@ -16,5 +16,4 @@ let firstTask = {
 //Rendre les donnees accessible--------
 window.projectArr = projectArr
 window.projectArrBehavior = projectArrBehavior
-window.projectCreation = projectCreation
 //-------------------------------------
