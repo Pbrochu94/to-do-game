@@ -1,32 +1,12 @@
 import { projectArr} from "./data"
-export {projectArrBehavior}
+export {quest}
 
 /*Array operations*/
-const projectArrBehavior = {
-    newProjectCount:0,
-    add:function(object){
-        projectArr.push(projectCreation.create(object));  
-        this.addCounter();
-    },
-    del:function(projectToRemove){
-        for(let currentProject of projectArr){
-            if(currentProject.id === projectToRemove.id)
-            {
-                projectArr.splice(projectArr.indexOf(currentProject), 1);
-            }
-        }
-    },
-    addCounter:function(){
-        this.newProjectCount++;
-    },
-    subCounter:function(){
-        this.newProjectCount--;
-    }
-};
-
 const quest = {
+    array:[],
+    newProjectCount:0,
     idCounter:0,
-    create:function(questName,questDuration, questEnding){
+    createQuest:function(questName,questDuration, questEnding){
         this.idCounter++;
         let questObject = {
             title:questName,
@@ -35,8 +15,24 @@ const quest = {
             id:this.idCounter
         }
         console.log(questObject);
+        quest.addToArr(questObject);
+    },
+    addToArr:function(quest){
+        this.array.push(quest);  
+        this.newProjectCount++;
+    },
+    delFromArr:function(id){
+        for(let currentProject of this.array){
+            if(currentProject.id === id)
+            {
+                this.array.splice(this.array.indexOf(currentProject), 1);
+            }
+        }
+    },
+    subCounter:function(){
+        this.newProjectCount--;
     }
-    };
+};
 
 /*dom manipulations(open window, add sections,etc)*/
 const domManipulations = {
@@ -47,7 +43,9 @@ const domManipulations = {
     },
     closeAddWindow:function(){
         let objectToClose = document.querySelector(".add-quest-open-scroll");
-        console.log(objectToClose);
+        document.querySelector("#quest-name").value = "";
+        document.querySelector("#duration").value = "";
+        document.querySelector("#ending-date").value = "";
         objectToClose.classList.add("invisible");
     }
 }
@@ -82,7 +80,7 @@ const listenersAction = {
             let questTime = document.querySelector("#duration").value;
             let endingDate = document.querySelector("#ending-date").value;
             domManipulations.closeAddWindow();
-            quest.create(questName,questTime,endingDate);
+            quest.createQuest(questName,questTime,endingDate);
         })
     })(),
 }
