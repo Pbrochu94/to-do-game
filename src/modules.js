@@ -51,9 +51,11 @@ const domManipulations = {
     },
     createQuestElement:function(questObject){
         let newQuest = document.querySelector(".quest-thumbnail").cloneNode(true);//clone default quest template with parameter true for all his descendant.
-        newQuest.querySelector(".title").value = "Test";
-        console.log(newQuest);
+        newQuest.querySelector(".title").textContent = questObject.title;
+        newQuest.querySelector(".duration").textContent = questObject.duration;
+        newQuest.querySelector(".due").textContent = questObject.ending;
         this.addQuestToDom(newQuest);
+        listenersAction.addQuestListener;
     },
     addQuestToDom:function(newQuest){
         document.querySelector(".projects-wrapper").append(newQuest);
