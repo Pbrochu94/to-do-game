@@ -55,25 +55,32 @@ const domManipulations = {
         newQuest.querySelector(".duration").textContent = questObject.duration;
         newQuest.querySelector(".due").textContent = questObject.ending;
         this.addQuestToDom(newQuest);
-        listenersAction.addQuestListener;
+        listenersAction.addNewQuestListener(newQuest);
     },
     addQuestToDom:function(newQuest){
         document.querySelector(".projects-wrapper").append(newQuest);
-    }
+    },
+    openQuest:function(questToOpen){
+        console.log(questToOpen);
+    },
 }
 
 /*Add the event listeners*/ 
 const listenersAction = {
+    addNewQuestListener:function(newQuest){
+        newQuest.addEventListener("click", function(){
+            domManipulations.openQuest(newQuest);
+        })
+    },
     addButtonListener:(function(){
         let addButton = document.querySelector(".add-project-button");
         addButton.addEventListener("click",domManipulations.openAddWindow);
     })(),
-    addQuestListener:(function(){
+    addDefaultQuestListener:(function(){
         let quests = document.querySelectorAll(".quest-thumbnail");
         quests.forEach((quest)=>{
-            console.log(quest)
             quest.addEventListener("click", function(){
-            console.log("quests clicked");
+            console.log(quest);
         })})
     })(),
     addQuestWindowCloseListener:(function(){
