@@ -77,11 +77,10 @@ const listenersAction = {
         addButton.addEventListener("click",domManipulations.openAddWindow);
     })(),
     addDefaultQuestListener:(function(){
-        let quests = document.querySelectorAll(".quest-thumbnail");
-        quests.forEach((quest)=>{
-            quest.addEventListener("click", function(){
-            console.log(quest);
-        })})
+        document.querySelector(".modif-quill").addEventListener("click", function(quest){
+            console.log(quest.target.parentNode)
+            document.querySelector("").classList.remove("invisible")
+        });
     })(),
     addQuestWindowCloseListener:(function(){
         let closeButton = document.querySelector(".close-add-quest-window");
